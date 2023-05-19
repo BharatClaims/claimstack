@@ -38,7 +38,9 @@ class ChangePasswordController extends Controller
         if (Hash::check($request->get('current_password'), $user->password)) {
 
             $user->password = Hash::make($request->password);
+            
             $user->save();
+
 
             return redirect()->route('claimant.password.form')->with('success', 'Password changed successfully!');
         } else {
