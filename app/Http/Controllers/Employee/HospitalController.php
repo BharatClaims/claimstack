@@ -141,6 +141,8 @@ class HospitalController extends Controller
             'uid'      => 'HSP'.$hospital->id
         ]);
 
+
+
         if ($request->hasfile('panfile')) {
             $panfile                    = $request->file('panfile');
             $name                       = $panfile->getClientOriginalName();
@@ -515,6 +517,8 @@ class HospitalController extends Controller
             'hms_charges.required' => 'Please Enter Hms Charges',
             'comments.required' => 'Please Enter comments',
         ];
+
+        
 
         $this->validate($request, $rules, $messages);
 
